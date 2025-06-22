@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom right, #fff6f0, #ffe8e8);
+      color: #4e3d42;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #c97b84;
+      padding: 2rem 1rem 1rem;
+      z-index: 1;
+    }
+
+    .photos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .photos img {
+      width: 280px;
+      max-width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .photos img:hover {
+      transform: scale(1.03);
+    }
+
+    .content {
+      max-width: 720px;
+      margin: auto;
+      background: #ffffffcc;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      font-size: 1.1rem;
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 1rem;
+      color: #a98b95;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      opacity: 0.3;
+      z-index: 1000;
+    }
+
+    /* Bunga jatuh (tanpa gambar eksternal) */
+    .petal {
+      position: fixed;
+      top: -30px;
+      width: 12px;
+      height: 12px;
+      background: radial-gradient(circle, #f9c5d1 20%, #f8a1b3 100%);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: fall linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(20px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body onclick="document.querySelector('audio').play()">
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="audio.mp3" type="audio/mp3" />
+    Browser tidak mendukung audio.
+  </audio>
+
+  <!-- Judul -->
+  <header>Happy Birthday !!!</header>
+
+  <!-- Foto -->
+  <div class="photos">
+    <img src="img.jpg" alt="Foto 1">
+    <img src="img1.jpg" alt="Foto 2">
+    <img src="img3.jpg" alt="Foto 3">
+  </div>
+
+  <!-- Ucapan -->
+  <div class="content">
+    <p>Hari ini adalah hari spesial , bukan hanya karena tanggal di kalender, tapi karena kamu lahir ke dunia ini. Kamu yang selalu hadir dengan senyuman, tawa yang menenangkan, dan perhatian yang kadang sederhana tapi dalam artinya.</p>
+
+    <p>Mungkin tak semua hal bisa kutunjukkan langsung, tapi lewat kata-kata ini aku ingin kamu tahu… betapa aku bersyukur karena kamu ada. Kamu bukan hanya seseorang yang baik, tapi juga seseorang yang kuat, yang lembut, dan yang layak dicintai tanpa ragu.</p>
+
+    <p>Aku berdoa di hari ulang tahunmu ini, semoga semua hal baik mengejarmu, kebahagiaan menyapamu tiap pagi, dan mimpi-mimpimu satu per satu menjadi nyata. Kamu tidak sendiri, dan kamu tidak akan pernah sendiri.</p>
+
+    <p>Terima kasih karena menjadi kamu. Terima kasih karena tetap bertahan sejauh ini. Dan terima kasih... karena telah mengisi hidup ini dengan warna yang tidak pernah kusangka akan seindah ini.</p>
+
+    <p>Selamat ulang tahun, kamu yang selalu spesial. Semoga segala rasa hangat dan cinta hari ini mengingatkan kamu... bahwa kamu berharga, luar biasa, dan dicintai , lebih dari yang kamu kira.</p>
+  </div>
+
+  <footer>~ Dari aku, yang sangat imutt iniii xixixixi 🌷</footer>
+
+  <!-- Script Bunga Jatuh -->
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    setInterval(createPetal, 300);
+  </script>
+
+</body>
+</html>
