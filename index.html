@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Selamat Ulang Tahun</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" /> <!-- AOS CSS -->
+
   <style>
     body {
       margin: 0;
@@ -79,7 +81,6 @@
       z-index: 1000;
     }
 
-    /* Bunga jatuh (tanpa gambar eksternal) */
     .petal {
       position: fixed;
       top: -30px;
@@ -114,10 +115,10 @@
   </audio>
 
   <!-- Judul -->
-  <header>Happy Birthday !!!</header>
+  <header data-aos="fade-down">Happy Birthday !!!</header>
 
   <!-- Foto -->
-  <div class="photos">
+  <div class="photos" data-aos="zoom-in">
     <img src="img.jpg" alt="Foto 1">
     <img src="img1.jpg" alt="Foto 2">
     <img src="img3.jpg" alt="Foto 3">
@@ -125,18 +126,14 @@
 
   <!-- Ucapan -->
   <div class="content">
-    <p>Hari ini adalah hari spesial , bukan hanya karena tanggal di kalender, tapi karena kamu lahir ke dunia ini. Kamu yang selalu hadir dengan senyuman, tawa yang menenangkan, dan perhatian yang kadang sederhana tapi dalam artinya.</p>
-
-    <p>Mungkin tak semua hal bisa kutunjukkan langsung, tapi lewat kata-kata ini aku ingin kamu tahu… betapa aku bersyukur karena kamu ada. Kamu bukan hanya seseorang yang baik, tapi juga seseorang yang kuat, yang lembut, dan yang layak dicintai tanpa ragu.</p>
-
-    <p>Aku berdoa di hari ulang tahunmu ini, semoga semua hal baik mengejarmu, kebahagiaan menyapamu tiap pagi, dan mimpi-mimpimu satu per satu menjadi nyata. Kamu tidak sendiri, dan kamu tidak akan pernah sendiri.</p>
-
-    <p>Terima kasih karena menjadi kamu. Terima kasih karena tetap bertahan sejauh ini. Dan terima kasih... karena telah mengisi hidup ini dengan warna yang tidak pernah kusangka akan seindah ini.</p>
-
-    <p>Selamat ulang tahun, kamu yang selalu spesial. Semoga segala rasa hangat dan cinta hari ini mengingatkan kamu... bahwa kamu berharga, luar biasa, dan dicintai , lebih dari yang kamu kira.</p>
+    <p data-aos="fade-up">Hari ini adalah hari spesial , bukan hanya karena tanggal di kalender, tapi karena kamu lahir ke dunia ini...</p>
+    <p data-aos="fade-up" data-aos-delay="100">Mungkin tak semua hal bisa kutunjukkan langsung, tapi lewat kata-kata ini aku ingin kamu tahu…</p>
+    <p data-aos="fade-up" data-aos-delay="200">Aku berdoa di hari ulang tahunmu ini, semoga semua hal baik mengejarmu...</p>
+    <p data-aos="fade-up" data-aos-delay="300">Terima kasih karena menjadi kamu. Terima kasih karena tetap bertahan sejauh ini...</p>
+    <p data-aos="fade-up" data-aos-delay="400">Selamat ulang tahun, kamu yang selalu spesial. Semoga segala rasa hangat dan cinta hari ini mengingatkan kamu...</p>
   </div>
 
-  <footer>~ Dari aku, yang sangat imutt iniii xixixixi 🌷</footer>
+  <footer data-aos="fade-in" data-aos-delay="500">~ Dari aku, yang sangat imutt iniii xixixixi 🌷</footer>
 
   <!-- Script Bunga Jatuh -->
   <script>
@@ -150,9 +147,16 @@
         petal.remove();
       }, 10000);
     }
-
     setInterval(createPetal, 300);
   </script>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
 </body>
 </html>
